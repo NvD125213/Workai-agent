@@ -1,0 +1,167 @@
+# Triển khai toàn bộ hệ thống (backend Go + AI service Python + PostgreSQL/pgvector).
+#
+#   cp .env.example .env        # điền JWT_ACCESS_SECRET, DEEPSEEK_API_KEY...
+#   docker compose up -d --build
+#
+# Thứ tự khởi động: db (healthy) -> migrate (chạy 1 lần rồi thoát) -> ai, api, worker.
+# Muốn chạy LLM trên máy thay vì qua API: đặt AI_APP_ENV=development trong .env và
+#   docker compose --profile ollama up -d --build
+#   docker compose exec ollama ollama pull qwen2.5:3b
+name: notification-job-mb
+
+x-backend-db-env: &backend-db-env
+  APP_ENV: ${APP_ENV:-development}
+  DB_HOST: db
+  DB_PORT: "5432"
+  DB_USER: ${DB_USER:-postgres}
+  DB_PASSWORD: ${DB_PASSWORD:-postgres}
+  DB_NAME: ${DB_NAME:-notification_job}
+  DB_SSLMODE: disable
+  AI_SERVICE_URL: http://ai:8001
+  JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?Thiếu JWT_ACCESS_SECRET trong .env}
+  LINKEDIN_ENABLED: ${LINKEDIN_ENABLED:-false}
+  LINKEDIN_WG_CONFIG: ${LINKEDIN_WG_CONFIG:+/run/secrets/wg.conf}
+  TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+  TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+  TZ: ${TZ:-Asia/Ho_Chi_Minh}
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-notification_job}
+    ports:
+      # Chỉ mở cho máy host; bỏ dòng này nếu không cần truy cập DB từ ngoài container
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-notification_job}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # Tạo extension pgvector + bảng (GORM AutoMigrate), chạy xong thì thoát
+  migrate:
+    build:
+      context: ./backend
+      args:
+        TARGET: migrate
+    image: notification-job-mb-migrate
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      <<: *backend-db-env
+
+  ai:
+    build:
+      context: ./llm
+    image: notification-job-mb-ai
+    restart: unless-stopped
+    environment:
+      APP_ENV: ${AI_APP_ENV:-production}
+      LLM_BACKEND: ${LLM_BACKEND:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_PROVIDER: ${LLM_PROVIDER:-deepseek}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      LLM_FALLBACK_PROVIDER: ${LLM_FALLBACK_PROVIDER:-}
+      LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OLLAMA_HOST_URL: ${OLLAMA_HOST_URL:-http://ollama:11434}
+      EMBED_BACKEND: ${EMBED_BACKEND:-torch}
+      RERANK_BACKEND: ${RERANK_BACKEND:-}
+      RERANK_API_KEY: ${RERANK_API_KEY:-}
+      RERANK_TOP_N: ${RERANK_TOP_N:-150}
+      CPU_THREADS: ${CPU_THREADS:-}
+      # 0 = cho phép tải mô hình (bge-m3 ~2.3GB) ở lần chạy đầu; đã có trong volume thì đặt 1
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
+    volumes:
+      - hf_models:/models
+      - ai_data:/app/data
+    # Không publish port: chỉ api trong mạng nội bộ gọi tới. Debug thì bỏ comment:
+    # ports:
+    #   - "127.0.0.1:8001:8001"
+
+  api:
+    build:
+      context: ./backend
+      args:
+        TARGET: api
+    image: notification-job-mb-api
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      ai:
+        condition: service_started
+    environment:
+      <<: *backend-db-env
+      HTTP_ADDR: ":8080"
+      JWT_ISSUER: ${JWT_ISSUER:-notification-job-mb}
+      JWT_ACCESS_EXPIRES_MINUTES: ${JWT_ACCESS_EXPIRES_MINUTES:-15}
+      REFRESH_TOKEN_EXPIRES_DAYS: ${REFRESH_TOKEN_EXPIRES_DAYS:-7}
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      FIND_JOB_MAX_PAGES: ${FIND_JOB_MAX_PAGES:-3}
+      FIND_JOB_MAX_CONCURRENT: ${FIND_JOB_MAX_CONCURRENT:-3}
+      FIND_JOB_SCORE_TIMEOUT_MINUTES: ${FIND_JOB_SCORE_TIMEOUT_MINUTES:-30}
+    ports:
+      - "${HTTP_PORT:-8080}:8080"
+    volumes:
+      - ${LINKEDIN_WG_CONFIG:-/dev/null}:/run/secrets/wg.conf:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  worker:
+    build:
+      context: ./backend
+      args:
+        TARGET: worker
+    image: notification-job-mb-worker
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      <<: *backend-db-env
+      DATA_DIR: /app/data
+      DATA_POLL_INTERVAL_SECONDS: ${DATA_POLL_INTERVAL_SECONDS:-30}
+      DATA_IMPORT_MAX_ATTEMPTS: ${DATA_IMPORT_MAX_ATTEMPTS:-5}
+      CRAWL_ENABLED: ${CRAWL_ENABLED:-true}
+      CRAWL_KEYWORDS: ${CRAWL_KEYWORDS:-golang}
+      CRAWL_SOURCES: ${CRAWL_SOURCES:-}
+      CRAWL_INTERVAL_HOURS: ${CRAWL_INTERVAL_HOURS:-3}
+      CRAWL_MAX_PAGES: ${CRAWL_MAX_PAGES:-5}
+      CRAWL_RUN_ON_START: ${CRAWL_RUN_ON_START:-false}
+    volumes:
+      - worker_data:/app/data
+      - ${LINKEDIN_WG_CONFIG:-/dev/null}:/run/secrets/wg.conf:ro
+
+  # Tuỳ chọn: chạy LLM trên máy (AI_APP_ENV=development). Cần ~4-8GB RAM.
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:0.12.6
+    restart: unless-stopped
+    volumes:
+      - ollama_models:/root/.ollama
+
+volumes:
+  postgres_data:
+  hf_models:
+  ai_data:
+  worker_data:
+  ollama_models:
