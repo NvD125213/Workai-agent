@@ -1,0 +1,19 @@
+curl --url 'https://apiv2.vieclam24h.vn/employer/fe/job/get-job-list?adtek_key=181224139363&gad_campaignid=22719676511&gad_source=1&gbraid=0AAAAA_0FYGdNi_2B-S6R_s-3mno7oF9WW&gclid=Cj0KCQiAwdDXBhDuARIsAFdLuklVd1z0rHq3_CuUM68OVaJ4QVwFVy3VEOykeXuopsRNFBzaI2zYwCcaAtTfEALw_wcB&q=video%20editor&utm_campaign=AWO_Digital_Google_Conversion_NTV_Search_Brand_VN_CPA&utm_content=Brand_ViecLam24h_Exact&utm_medium=cpc&utm_source=google&utm_term=vieclam24h&page=1&exp_session_id=7bf45276-5953-4cd6-b8bc-87b676f13bbd&device_id=9c87fb32-99e2-4450-a10a-c81e286a48f9&request_id=5b6cbc6836a1e0fcffadb497bca8b59b&per_page=30&sort_q=priority_max,desc&url=%2Fviec-lam-ha-noi-p73.html%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAWO_Digital_Google_Conversion_NTV_Search_Brand_VN_CPA%26utm_term%3Dvieclam24h%26adtek_key%3D181224139363%26utm_con&user_agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/157.0.0.0%20Safari/537.36&refer_page=https%3A%2F%2Fvieclam24h.vn%2Fviec-lam-ha-noi-p73.html%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAWO_Digital_Google_Conversion_NTV_Search_Brand_VN_CPA%26utm_term&from_page=JS_Province&action=province&request_from=search_result_web&ab_version=B&search_id=dec31b046f59f4b2c12bc6dd8cfc1a9f&provinces=73&source=web' \
+ -H 'accept: application/json' \
+ -H 'accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5' \
+ -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjaGFubmVsX2NvZGUiOiJ2bDI0aCIsInVzZXIiOm51bGx9.a0POm2ZVRwetYs2QsMj0sRg8lZSSbKufX4sewqhAM5o' \
+ -H 'content-type: application/json' \
+ -H 'origin: https://vieclam24h.vn' \
+ -H 'priority: u=1, i' \
+ -H 'referer: https://vieclam24h.vn/' \
+ -H 'sec-ch-ua: "Not-A.Brand";v="99", "Google Chrome";v="157", "Chromium";v="157"' \
+ -H 'sec-ch-ua-mobile: ?0' \
+ -H 'sec-ch-ua-platform: "Windows"' \
+ -H 'sec-fetch-dest: empty' \
+ -H 'sec-fetch-mode: cors' \
+ -H 'sec-fetch-site: same-site' \
+ -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36' \
+ -H 'x-branch: vl24h.north' \
+ -H 'x-correlation-id: f6169b88-c1dc-4aa4-ae14-61ec1e18a85f' \
+ -H 'x-lang: vi' \
+ -H 'x-request-id: 75d2e319-9405-40fb-9ab4-918802c326bd'

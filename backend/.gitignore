@@ -1,0 +1,26 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+/tmp/
+build-errors-*.log
+
+# Local env
+.env
+
+# Tests
+coverage.out
+*.test
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Job data files (AI output)
+/data/

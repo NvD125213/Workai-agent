@@ -1,0 +1,1020 @@
+{
+ "_source": "vieclam24h.vn __NEXT_DATA__ (initialState.AuLocation.provinces, api.initCommon.data), 12/11/2026",
+ "provinces": [
+  {
+   "id": 210000160,
+   "name": "Hà Nội",
+   "slug": "ha-noi",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000073,
+   "name": "Hà Nội",
+   "slug": "ha-noi",
+   "version": 1,
+   "old_id": 73
+  },
+  {
+   "id": 210000187,
+   "name": "TP.HCM",
+   "slug": "ho-chi-minh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000122,
+   "name": "TP.HCM",
+   "slug": "ho-chi-minh",
+   "version": 1,
+   "old_id": 122
+  },
+  {
+   "id": 110000129,
+   "name": "An Giang",
+   "slug": "an-giang",
+   "version": 1,
+   "old_id": 129
+  },
+  {
+   "id": 210000191,
+   "name": "An Giang",
+   "slug": "an-giang",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000121,
+   "name": "Bà Rịa - Vũng Tàu",
+   "slug": "ba-ria-vung-tau",
+   "version": 1,
+   "old_id": 121
+  },
+  {
+   "id": 110000087,
+   "name": "Bắc Giang",
+   "slug": "bac-giang",
+   "version": 1,
+   "old_id": 87
+  },
+  {
+   "id": 110000076,
+   "name": "Bắc Kạn",
+   "slug": "bac-kan",
+   "version": 1,
+   "old_id": 76
+  },
+  {
+   "id": 110000134,
+   "name": "Bạc Liêu",
+   "slug": "bac-lieu",
+   "version": 1,
+   "old_id": 134
+  },
+  {
+   "id": 210000170,
+   "name": "Bắc Ninh",
+   "slug": "bac-ninh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000090,
+   "name": "Bắc Ninh",
+   "slug": "bac-ninh",
+   "version": 1,
+   "old_id": 90
+  },
+  {
+   "id": 110000125,
+   "name": "Bến Tre",
+   "slug": "ben-tre",
+   "version": 1,
+   "old_id": 125
+  },
+  {
+   "id": 110000119,
+   "name": "Bình Dương",
+   "slug": "binh-duong",
+   "version": 1,
+   "old_id": 119
+  },
+  {
+   "id": 110000107,
+   "name": "Bình Định",
+   "slug": "binh-dinh",
+   "version": 1,
+   "old_id": 107
+  },
+  {
+   "id": 110000117,
+   "name": "Bình Phước",
+   "slug": "binh-phuoc",
+   "version": 1,
+   "old_id": 117
+  },
+  {
+   "id": 110000111,
+   "name": "Bình Thuận",
+   "slug": "binh-thuan",
+   "version": 1,
+   "old_id": 111
+  },
+  {
+   "id": 110000135,
+   "name": "Cà Mau",
+   "slug": "ca-mau",
+   "version": 1,
+   "old_id": 135
+  },
+  {
+   "id": 210000193,
+   "name": "Cà Mau",
+   "slug": "ca-mau",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000131,
+   "name": "Cần Thơ",
+   "slug": "can-tho",
+   "version": 1,
+   "old_id": 131
+  },
+  {
+   "id": 210000192,
+   "name": "Cần Thơ",
+   "slug": "can-tho",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 210000161,
+   "name": "Cao Bằng",
+   "slug": "cao-bang",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000075,
+   "name": "Cao Bằng",
+   "slug": "cao-bang",
+   "version": 1,
+   "old_id": 75
+  },
+  {
+   "id": 210000180,
+   "name": "Đà Nẵng",
+   "slug": "da-nang",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000104,
+   "name": "Đà Nẵng",
+   "slug": "da-nang",
+   "version": 1,
+   "old_id": 104
+  },
+  {
+   "id": 210000184,
+   "name": "Đắk Lắk",
+   "slug": "dak-lak",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000114,
+   "name": "Đắk Lắk",
+   "slug": "dak-lak",
+   "version": 1,
+   "old_id": 114
+  },
+  {
+   "id": 110000115,
+   "name": "Đắk Nông",
+   "slug": "dak-nong",
+   "version": 1,
+   "old_id": 115
+  },
+  {
+   "id": 210000163,
+   "name": "Điện Biên",
+   "slug": "dien-bien",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000079,
+   "name": "Điện Biên",
+   "slug": "dien-bien",
+   "version": 1,
+   "old_id": 79
+  },
+  {
+   "id": 210000186,
+   "name": "Đồng Nai",
+   "slug": "dong-nai",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000120,
+   "name": "Đồng Nai",
+   "slug": "dong-nai",
+   "version": 1,
+   "old_id": 120
+  },
+  {
+   "id": 110000128,
+   "name": "Đồng Tháp",
+   "slug": "dong-thap",
+   "version": 1,
+   "old_id": 128
+  },
+  {
+   "id": 210000189,
+   "name": "Đồng Tháp",
+   "slug": "dong-thap",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 210000182,
+   "name": "Gia Lai",
+   "slug": "gia-lai",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000113,
+   "name": "Gia Lai",
+   "slug": "gia-lai",
+   "version": 1,
+   "old_id": 113
+  },
+  {
+   "id": 110000074,
+   "name": "Hà Giang",
+   "slug": "ha-giang",
+   "version": 1,
+   "old_id": 74
+  },
+  {
+   "id": 110000095,
+   "name": "Hà Nam",
+   "slug": "ha-nam",
+   "version": 1,
+   "old_id": 95
+  },
+  {
+   "id": 210000177,
+   "name": "Hà Tĩnh",
+   "slug": "ha-tinh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000100,
+   "name": "Hà Tĩnh",
+   "slug": "ha-tinh",
+   "version": 1,
+   "old_id": 100
+  },
+  {
+   "id": 110000091,
+   "name": "Hải Dương",
+   "slug": "hai-duong",
+   "version": 1,
+   "old_id": 91
+  },
+  {
+   "id": 210000172,
+   "name": "Hải Phòng",
+   "slug": "hai-phong",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000092,
+   "name": "Hải Phòng",
+   "slug": "hai-phong",
+   "version": 1,
+   "old_id": 92
+  },
+  {
+   "id": 110000132,
+   "name": "Hậu Giang",
+   "slug": "hau-giang",
+   "version": 1,
+   "old_id": 132
+  },
+  {
+   "id": 110000083,
+   "name": "Hòa Bình",
+   "slug": "hoa-binh",
+   "version": 1,
+   "old_id": 83
+  },
+  {
+   "id": 210000179,
+   "name": "Huế",
+   "slug": "hue",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 210000173,
+   "name": "Hưng Yên",
+   "slug": "hung-yen",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000093,
+   "name": "Hưng Yên",
+   "slug": "hung-yen",
+   "version": 1,
+   "old_id": 93
+  },
+  {
+   "id": 210000183,
+   "name": "Khánh Hòa",
+   "slug": "khanh-hoa",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000109,
+   "name": "Khánh Hòa",
+   "slug": "khanh-hoa",
+   "version": 1,
+   "old_id": 109
+  },
+  {
+   "id": 110000130,
+   "name": "Kiên Giang",
+   "slug": "kien-giang",
+   "version": 1,
+   "old_id": 130
+  },
+  {
+   "id": 110000112,
+   "name": "Kon Tum",
+   "slug": "kon-tum",
+   "version": 1,
+   "old_id": 112
+  },
+  {
+   "id": 210000164,
+   "name": "Lai Châu",
+   "slug": "lai-chau",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000080,
+   "name": "Lai Châu",
+   "slug": "lai-chau",
+   "version": 1,
+   "old_id": 80
+  },
+  {
+   "id": 210000185,
+   "name": "Lâm Đồng",
+   "slug": "lam-dong",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000116,
+   "name": "Lâm Đồng",
+   "slug": "lam-dong",
+   "version": 1,
+   "old_id": 116
+  },
+  {
+   "id": 210000168,
+   "name": "Lạng Sơn",
+   "slug": "lang-son",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000085,
+   "name": "Lạng Sơn",
+   "slug": "lang-son",
+   "version": 1,
+   "old_id": 85
+  },
+  {
+   "id": 210000166,
+   "name": "Lào Cai",
+   "slug": "lao-cai",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000078,
+   "name": "Lào Cai",
+   "slug": "lao-cai",
+   "version": 1,
+   "old_id": 78
+  },
+  {
+   "id": 110000123,
+   "name": "Long An",
+   "slug": "long-an",
+   "version": 1,
+   "old_id": 123
+  },
+  {
+   "id": 110000137,
+   "name": "Miền Bắc",
+   "slug": "mien-bac",
+   "version": 1,
+   "old_id": 137
+  },
+  {
+   "id": 110000096,
+   "name": "Nam Định",
+   "slug": "nam-dinh",
+   "version": 1,
+   "old_id": 96
+  },
+  {
+   "id": 210000176,
+   "name": "Nghệ An",
+   "slug": "nghe-an",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000099,
+   "name": "Nghệ An",
+   "slug": "nghe-an",
+   "version": 1,
+   "old_id": 99
+  },
+  {
+   "id": 210000174,
+   "name": "Ninh Bình",
+   "slug": "ninh-binh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000097,
+   "name": "Ninh Bình",
+   "slug": "ninh-binh",
+   "version": 1,
+   "old_id": 97
+  },
+  {
+   "id": 110000110,
+   "name": "Ninh Thuận",
+   "slug": "ninh-thuan",
+   "version": 1,
+   "old_id": 110
+  },
+  {
+   "id": 110000140,
+   "name": "Nước ngoài",
+   "slug": "nuoc-ngoai",
+   "version": 1,
+   "old_id": 140
+  },
+  {
+   "id": 210000194,
+   "name": "Nước ngoài",
+   "slug": "nuoc-ngoai",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 210000171,
+   "name": "Phú Thọ",
+   "slug": "phu-tho",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000088,
+   "name": "Phú Thọ",
+   "slug": "phu-tho",
+   "version": 1,
+   "old_id": 88
+  },
+  {
+   "id": 110000108,
+   "name": "Phú Yên",
+   "slug": "phu-yen",
+   "version": 1,
+   "old_id": 108
+  },
+  {
+   "id": 110000101,
+   "name": "Quảng Bình",
+   "slug": "quang-binh",
+   "version": 1,
+   "old_id": 101
+  },
+  {
+   "id": 110000105,
+   "name": "Quảng Nam",
+   "slug": "quang-nam",
+   "version": 1,
+   "old_id": 105
+  },
+  {
+   "id": 210000181,
+   "name": "Quảng Ngãi",
+   "slug": "quang-ngai",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000106,
+   "name": "Quảng Ngãi",
+   "slug": "quang-ngai",
+   "version": 1,
+   "old_id": 106
+  },
+  {
+   "id": 210000169,
+   "name": "Quảng Ninh",
+   "slug": "quang-ninh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000086,
+   "name": "Quảng Ninh",
+   "slug": "quang-ninh",
+   "version": 1,
+   "old_id": 86
+  },
+  {
+   "id": 210000178,
+   "name": "Quảng Trị",
+   "slug": "quang-tri",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000102,
+   "name": "Quảng Trị",
+   "slug": "quang-tri",
+   "version": 1,
+   "old_id": 102
+  },
+  {
+   "id": 110000133,
+   "name": "Sóc Trăng",
+   "slug": "soc-trang",
+   "version": 1,
+   "old_id": 133
+  },
+  {
+   "id": 210000165,
+   "name": "Sơn La",
+   "slug": "son-la",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000081,
+   "name": "Sơn La",
+   "slug": "son-la",
+   "version": 1,
+   "old_id": 81
+  },
+  {
+   "id": 210000188,
+   "name": "Tây Ninh",
+   "slug": "tay-ninh",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000118,
+   "name": "Tây Ninh",
+   "slug": "tay-ninh",
+   "version": 1,
+   "old_id": 118
+  },
+  {
+   "id": 110000094,
+   "name": "Thái Bình",
+   "slug": "thai-binh",
+   "version": 1,
+   "old_id": 94
+  },
+  {
+   "id": 210000167,
+   "name": "Thái Nguyên",
+   "slug": "thai-nguyen",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000084,
+   "name": "Thái Nguyên",
+   "slug": "thai-nguyen",
+   "version": 1,
+   "old_id": 84
+  },
+  {
+   "id": 210000175,
+   "name": "Thanh Hóa",
+   "slug": "thanh-hoa",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000098,
+   "name": "Thanh Hóa",
+   "slug": "thanh-hoa",
+   "version": 1,
+   "old_id": 98
+  },
+  {
+   "id": 110000103,
+   "name": "Thừa Thiên Huế",
+   "slug": "thua-thien-hue",
+   "version": 1,
+   "old_id": 103
+  },
+  {
+   "id": 110000124,
+   "name": "Tiền Giang",
+   "slug": "tien-giang",
+   "version": 1,
+   "old_id": 124
+  },
+  {
+   "id": 110000136,
+   "name": "Toàn quốc",
+   "slug": "toan-quoc",
+   "version": 1,
+   "old_id": 136
+  },
+  {
+   "id": 110000126,
+   "name": "Trà Vinh",
+   "slug": "tra-vinh",
+   "version": 1,
+   "old_id": 126
+  },
+  {
+   "id": 210000162,
+   "name": "Tuyên Quang",
+   "slug": "tuyen-quang",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000077,
+   "name": "Tuyên Quang",
+   "slug": "tuyen-quang",
+   "version": 1,
+   "old_id": 77
+  },
+  {
+   "id": 210000190,
+   "name": "Vĩnh Long",
+   "slug": "vinh-long",
+   "version": 2,
+   "old_id": null
+  },
+  {
+   "id": 110000127,
+   "name": "Vĩnh Long",
+   "slug": "vinh-long",
+   "version": 1,
+   "old_id": 127
+  },
+  {
+   "id": 110000089,
+   "name": "Vĩnh Phúc",
+   "slug": "vinh-phuc",
+   "version": 1,
+   "old_id": 89
+  },
+  {
+   "id": 110000082,
+   "name": "Yên Bái",
+   "slug": "yen-bai",
+   "version": 1,
+   "old_id": 82
+  }
+ ],
+ "occupations": [
+  {
+   "id": 1,
+   "name": "Hành chính - Thư ký",
+   "slug": "hanh-chinh-thu-ky"
+  },
+  {
+   "id": 2,
+   "name": "An ninh - Bảo vệ",
+   "slug": "an-ninh-bao-ve"
+  },
+  {
+   "id": 3,
+   "name": "Thiết kế - Sáng tạo nghệ thuật",
+   "slug": "thiet-ke-sang-tao-nghe-thuat"
+  },
+  {
+   "id": 4,
+   "name": "Kiến trúc - Thiết kế nội ngoại thất",
+   "slug": "kien-truc-thiet-ke-noi-ngoai-that"
+  },
+  {
+   "id": 5,
+   "name": "Khách sạn - Nhà hàng - Du lịch",
+   "slug": "khach-san-nha-hang-du-lich"
+  },
+  {
+   "id": 6,
+   "name": "Bán sỉ - Bán lẻ - Quản lý cửa hàng",
+   "slug": "ban-si-ban-le-quan-ly-cua-hang"
+  },
+  {
+   "id": 7,
+   "name": "IT Phần cứng - Mạng",
+   "slug": "it-phan-cung-mang"
+  },
+  {
+   "id": 8,
+   "name": "IT Phần mềm",
+   "slug": "it-phan-mem"
+  },
+  {
+   "id": 9,
+   "name": "Sản xuất - Lắp ráp - Chế biến",
+   "slug": "san-xuat-lap-rap-che-bien"
+  },
+  {
+   "id": 10,
+   "name": "Vận hành - Bảo trì - Bảo dưỡng",
+   "slug": "van-hanh-bao-tri-bao-duong"
+  },
+  {
+   "id": 11,
+   "name": "Nông - Lâm - Ngư nghiệp",
+   "slug": "nong-lam-ngu-nghiep"
+  },
+  {
+   "id": 12,
+   "name": "Marketing",
+   "slug": "marketing"
+  },
+  {
+   "id": 13,
+   "name": "Bán hàng - Kinh doanh",
+   "slug": "ban-hang-kinh-doanh"
+  },
+  {
+   "id": 14,
+   "name": "Thu mua - Kho Vận - Chuỗi cung ứng",
+   "slug": "thu-mua-kho-van-chuoi-cung-ung"
+  },
+  {
+   "id": 15,
+   "name": "Xuất Nhập Khẩu",
+   "slug": "xuat-nhap-khau"
+  },
+  {
+   "id": 16,
+   "name": "Vận Tải - Lái xe - Giao nhận",
+   "slug": "van-tai-lai-xe-giao-nhan"
+  },
+  {
+   "id": 17,
+   "name": "Kế toán",
+   "slug": "ke-toan"
+  },
+  {
+   "id": 18,
+   "name": "Tài chính - Đầu tư - Chứng Khoán",
+   "slug": "tai-chinh-dau-tu-chung-khoan"
+  },
+  {
+   "id": 19,
+   "name": "Ngân hàng",
+   "slug": "ngan-hang"
+  },
+  {
+   "id": 20,
+   "name": "Khai thác năng lượng - Khoáng sản - Địa chất",
+   "slug": "khai-thac-nang-luong-khoang-san-dia-chat"
+  },
+  {
+   "id": 21,
+   "name": "Y tế - Chăm sóc sức khỏe",
+   "slug": "y-te-cham-soc-suc-khoe"
+  },
+  {
+   "id": 22,
+   "name": "Nhân sự",
+   "slug": "nhan-su"
+  },
+  {
+   "id": 23,
+   "name": "Bảo hiểm",
+   "slug": "bao-hiem"
+  },
+  {
+   "id": 24,
+   "name": "Thông tin - Truyền thông - Quảng cáo",
+   "slug": "thong-tin-truyen-thong-quang-cao"
+  },
+  {
+   "id": 25,
+   "name": "Luật - Pháp Lý - Tuân thủ",
+   "slug": "luat-phap-ly-tuan-thu"
+  },
+  {
+   "id": 26,
+   "name": "Kiểm toán",
+   "slug": "kiem-toan"
+  },
+  {
+   "id": 27,
+   "name": "Quản lý dự án",
+   "slug": "quan-ly-du-an"
+  },
+  {
+   "id": 28,
+   "name": "Quản lý tiêu chuẩn và chất lượng",
+   "slug": "quan-ly-tieu-chuan-va-chat-luong"
+  },
+  {
+   "id": 29,
+   "name": "Bất động sản",
+   "slug": "bat-dong-san"
+  },
+  {
+   "id": 30,
+   "name": "Chăm sóc khách hàng",
+   "slug": "cham-soc-khach-hang"
+  },
+  {
+   "id": 31,
+   "name": "Xây dựng",
+   "slug": "xay-dung"
+  },
+  {
+   "id": 32,
+   "name": "Giáo dục - Đào tạo",
+   "slug": "giao-duc-dao-tao"
+  },
+  {
+   "id": 33,
+   "name": "Phân tích - Thống kê dữ liệu",
+   "slug": "phan-tich-thong-ke-du-lieu"
+  },
+  {
+   "id": 34,
+   "name": "Khoa học - Kỹ thuật",
+   "slug": "khoa-hoc-ky-thuat"
+  },
+  {
+   "id": 35,
+   "name": "Nghề nghiệp khác",
+   "slug": "nghe-nghiep-khac"
+  },
+  {
+   "id": 36,
+   "name": "An toàn lao động",
+   "slug": "an-toan-lao-dong"
+  },
+  {
+   "id": 37,
+   "name": "Biên phiên dịch",
+   "slug": "bien-phien-dich"
+  },
+  {
+   "id": 38,
+   "name": "Bưu chính viễn thông",
+   "slug": "buu-chinh-vien-thong"
+  },
+  {
+   "id": 39,
+   "name": "Dầu khí",
+   "slug": "dau-khi"
+  },
+  {
+   "id": 40,
+   "name": "Dệt may - Da giày - Thời trang",
+   "slug": "det-may-da-giay-thoi-trang"
+  },
+  {
+   "id": 41,
+   "name": "Điện - Điện tử - Điện lạnh",
+   "slug": "dien-dien-tu-dien-lanh"
+  },
+  {
+   "id": 42,
+   "name": "Dược phẩm",
+   "slug": "duoc-pham"
+  },
+  {
+   "id": 43,
+   "name": "Hóa học - Hóa sinh",
+   "slug": "hoa-hoc-hoa-sinh"
+  },
+  {
+   "id": 44,
+   "name": "Môi trường - Xử lý chất thải",
+   "slug": "moi-truong-xu-ly-chat-thai"
+  },
+  {
+   "id": 45,
+   "name": "Thực phẩm - Đồ uống",
+   "slug": "thuc-pham-do-uong"
+  },
+  {
+   "id": 46,
+   "name": "Chăn nuôi - Thú y",
+   "slug": "chan-nuoi-thu-y"
+  },
+  {
+   "id": 47,
+   "name": "Cơ khí - Ô tô - Tự động hóa",
+   "slug": "co-khi-o-to-tu-dong-hoa"
+  },
+  {
+   "id": 48,
+   "name": "Công nghệ thực phẩm - Dinh dưỡng",
+   "slug": "cong-nghe-thuc-pham-dinh-duong"
+  },
+  {
+   "id": 49,
+   "name": "Lao động phổ thông",
+   "slug": "lao-dong-pho-thong"
+  },
+  {
+   "id": 50,
+   "name": "Phi chính phủ - Phi lợi nhuận",
+   "slug": "phi-chinh-phu-phi-loi-nhuan"
+  },
+  {
+   "id": 51,
+   "name": "Truyền hình - Báo chí - Biên tập",
+   "slug": "truyen-hinh-bao-chi-bien-tap"
+  },
+  {
+   "id": 52,
+   "name": "Xuất bản - In ấn",
+   "slug": "xuat-ban-in-an"
+  },
+  {
+   "id": 53,
+   "name": "Thực tập sinh",
+   "slug": "thuc-tap-sinh"
+  }
+ ],
+ "experience_range": {
+  "1": "Chưa có kinh nghiệm",
+  "2": "Dưới 1 năm",
+  "3": "1 năm",
+  "4": "2 năm",
+  "5": "3 năm",
+  "6": "4 năm",
+  "7": "5 năm",
+  "8": "Hơn 5 năm"
+ },
+ "level_requirement": {
+  "6": "Cộng tác viên",
+  "5": "Nhân viên",
+  "4": "Chuyên gia",
+  "3": "Trưởng nhóm",
+  "2": "Trưởng phòng",
+  "1": "Giám đốc"
+ },
+ "degree_requirement": {
+  "8": "Trên đại học",
+  "1": "Đại học",
+  "2": "Cao đẳng",
+  "3": "Trung cấp",
+  "4": "Trung học",
+  "5": "Chứng chỉ",
+  "7": "Không yêu cầu"
+ },
+ "working_method": {
+  "1": "Toàn thời gian cố định",
+  "2": "Toàn thời gian tạm thời",
+  "3": "Bán thời gian cố định",
+  "4": "Bán thời gian tạm thời",
+  "5": "Theo hợp đồng tư vấn",
+  "6": "Thực tập",
+  "7": "Khác"
+ },
+ "gender": {
+  "1": "Không yêu cầu",
+  "2": "Nam",
+  "3": "Nữ"
+ }
+}

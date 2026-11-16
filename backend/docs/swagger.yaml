@@ -1,0 +1,809 @@
+basePath: /
+definitions:
+  handlers.AnalysisResponse:
+    properties:
+      created_at:
+        type: string
+      error:
+        type: string
+      finished_at:
+        type: string
+      id:
+        description: ID lượt phân tích; dùng cho GET /api/v1/analyze-cv/{id} và POST
+          /api/v1/find-job/{id}.
+        example: 3
+        type: integer
+      outdated:
+        description: 'Outdated: đã tải lên CV mới sau lượt phân tích này, kết quả
+          không còn; phân tích lại.'
+        type: boolean
+      profile_id:
+        example: 1
+        type: integer
+      result:
+        allOf:
+        - $ref: '#/definitions/handlers.AnalyzeCVResponse'
+        description: 'Result: hồ sơ đã phân tích; chỉ có khi status = DONE và không
+          outdated.'
+      status:
+        enum:
+        - QUEUED
+        - ANALYZING
+        - DONE
+        - FAILED
+        example: DONE
+        type: string
+    type: object
+  handlers.AnalyzeCVResponse:
+    properties:
+      current_title:
+        example: Full-Stack Developer
+        type: string
+      exp_years:
+        example: 1
+        type: integer
+      location:
+        example: Hà Nội
+        type: string
+      parsed_at:
+        type: string
+      profile:
+        description: 'Profile is the full analysis: years as a decimal, all job titles,
+          experiences, languages...'
+        type: object
+      search_keyword:
+        example: Developer
+        type: string
+      skills:
+        items:
+          $ref: '#/definitions/handlers.SkillResponse'
+        type: array
+      summary:
+        type: string
+    type: object
+  handlers.AuthResponse:
+    properties:
+      access_token:
+        type: string
+      expires_in:
+        example: 900
+        type: integer
+      refresh_token:
+        type: string
+      token_type:
+        example: Bearer
+        type: string
+      user:
+        $ref: '#/definitions/handlers.UserResponse'
+    type: object
+  handlers.FindJobRequest:
+    properties:
+      desired_title:
+        description: Chức danh để chấm điểm độ khớp; mặc định là chức danh hiện tại
+          trong CV.
+        example: Fullstack Developer
+        maxLength: 255
+        type: string
+      keyword:
+        description: Keyword cào job; mặc định là keyword nghĩa rộng từ CV (vd "Developer").
+        example: Developer
+        maxLength: 100
+        type: string
+      location:
+        example: Hà Nội
+        maxLength: 100
+        type: string
+    type: object
+  handlers.ForgotPasswordRequest:
+    properties:
+      email:
+        example: user@example.com
+        maxLength: 150
+        type: string
+    required:
+    - email
+    type: object
+  handlers.HealthResponse:
+    properties:
+      status:
+        example: ok
+        type: string
+    type: object
+  handlers.LoginRequest:
+    properties:
+      email:
+        example: user@example.com
+        maxLength: 150
+        type: string
+      password:
+        example: secret123
+        maxLength: 128
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  handlers.MatchResponse:
+    properties:
+      company:
+        example: Công ty ABC
+        type: string
+      details:
+        description: 'Details: điểm thành phần, hệ số phạt, kỹ năng có/thiếu.'
+        type: object
+      job_id:
+        example: 42
+        type: integer
+      passed:
+        description: luôn true với lượt tìm mới (chỉ lưu job đạt)
+        example: true
+        type: boolean
+      rank:
+        example: 1
+        type: integer
+      salary:
+        example: 10 - 15 triệu
+        type: string
+      score:
+        example: 78.04
+        type: number
+      source:
+        example: topcv
+        type: string
+      title:
+        example: Fresher Fullstack Developer
+        type: string
+      url:
+        example: https://www.topcv.vn/viec-lam/...
+        type: string
+    type: object
+  handlers.MessageResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  handlers.ParseCVResponse:
+    properties:
+      chars:
+        example: 3805
+        type: integer
+      profile_id:
+        example: 1
+        type: integer
+      text:
+        example: |-
+          DƯƠNG TUẤN KHANG
+          Full-Stack Developer...
+        type: string
+    type: object
+  handlers.RefreshRequest:
+    properties:
+      refresh_token:
+        maxLength: 256
+        type: string
+    required:
+    - refresh_token
+    type: object
+  handlers.ResetPasswordRequest:
+    properties:
+      new_password:
+        maxLength: 128
+        minLength: 8
+        type: string
+      reset_token:
+        maxLength: 64
+        type: string
+    required:
+    - new_password
+    - reset_token
+    type: object
+  handlers.SearchResponse:
+    properties:
+      analysis_id:
+        description: 'AnalysisID: lượt phân tích CV (POST /api/v1/analyze-cv) dùng
+          để tìm.'
+        example: 3
+        type: integer
+      created_at:
+        type: string
+      desired_title:
+        example: Full-Stack Developer
+        type: string
+      error:
+        type: string
+      exp_filter:
+        description: 'ExpFilter: có lọc theo khoảng kinh nghiệm và xếp hạng theo lương
+          hay không (query exp).'
+        example: true
+        type: boolean
+      finished_at:
+        type: string
+      id:
+        example: 7
+        type: integer
+      jobs_found:
+        example: 96
+        type: integer
+      keyword:
+        example: Developer
+        type: string
+      location:
+        example: Hà Nội
+        type: string
+      matches:
+        description: 'Matches: job đạt ngưỡng điểm, xếp theo điểm; chỉ có khi status
+          = DONE.'
+        items:
+          $ref: '#/definitions/handlers.MatchResponse'
+        type: array
+      matches_found:
+        example: 2
+        type: integer
+      status:
+        enum:
+        - QUEUED
+        - CRAWLING
+        - RANKING
+        - DONE
+        - FAILED
+        example: DONE
+        type: string
+      summary:
+        description: 'Summary: số job đã cào / bị loại / được chấm / đạt, theo từng
+          nguồn, các lý do loại phổ biến.'
+        type: object
+    type: object
+  handlers.SendMessageRequest:
+    properties:
+      text:
+        example: Xin chào từ notification-job-mb
+        type: string
+    required:
+    - text
+    type: object
+  handlers.SendMessageResponse:
+    properties:
+      status:
+        example: sent
+        type: string
+    type: object
+  handlers.SkillResponse:
+    properties:
+      level:
+        example: JUNIOR
+        type: string
+      name:
+        example: react
+        type: string
+    type: object
+  handlers.UserResponse:
+    properties:
+      email:
+        example: user@example.com
+        type: string
+      email_verified:
+        example: false
+        type: boolean
+      id:
+        example: 1
+        type: integer
+      name:
+        example: Nguyen Van A
+        type: string
+      role:
+        example: USER
+        type: string
+    type: object
+  handlers.VerifyResetCodeRequest:
+    properties:
+      code:
+        example: "123456"
+        type: string
+      email:
+        example: user@example.com
+        maxLength: 150
+        type: string
+    required:
+    - code
+    - email
+    type: object
+  handlers.VerifyResetCodeResponse:
+    properties:
+      expires_at:
+        type: string
+      expires_in:
+        description: seconds
+        example: 600
+        type: integer
+      reset_token:
+        type: string
+    type: object
+  middlewares.ErrorBody:
+    properties:
+      code:
+        example: invalid_credentials
+        type: string
+      message:
+        example: invalid email or password
+        type: string
+    type: object
+  middlewares.ErrorResponse:
+    properties:
+      error:
+        $ref: '#/definitions/middlewares.ErrorBody'
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: REST API cho hệ thống notification job (Gin + PostgreSQL).
+  title: Notification Job API
+  version: "1.0"
+paths:
+  /api/v1/analyze-cv:
+    post:
+      description: 'Tạo một lượt phân tích CV hiện tại bằng AI chạy nền: chức danh,
+        số năm kinh nghiệm, kỹ năng, ngoại ngữ...; vector hoá hồ sơ và tạo keyword
+        tìm việc nghĩa rộng (vd "Frontend Developer" -> "Developer"). Trả về ngay
+        với status QUEUED; theo dõi bằng GET /api/v1/analyze-cv/{id} (mất khoảng 30
+        giây đến vài phút). Khi DONE, dùng id này cho POST /api/v1/find-job/{id}.
+        Mỗi người dùng chỉ có một lượt phân tích đang chạy.'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/handlers.AnalysisResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "404":
+          description: Chưa tải lên CV
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "409":
+          description: Đang có lượt phân tích chưa xong
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Phân tích CV (chạy nền)
+      tags:
+      - cv
+  /api/v1/analyze-cv/{id}:
+    get:
+      description: 'status: QUEUED (chờ), ANALYZING (đang phân tích), DONE (xong,
+        có result), FAILED (xem error). outdated = true khi đã tải lên CV mới sau
+        lượt này.'
+      parameters:
+      - description: ID lượt phân tích
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.AnalysisResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Trạng thái và kết quả một lượt phân tích CV
+      tags:
+      - cv
+  /api/v1/auth/forgot-password:
+    post:
+      consumes:
+      - application/json
+      description: Gửi mã OTP 6 số qua email nếu tài khoản tồn tại. Luôn trả 202 với
+        cùng nội dung để không lộ email nào đã đăng ký.
+      parameters:
+      - description: Email
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.ForgotPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/handlers.MessageResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: 'Quên mật khẩu — bước 1: gửi OTP'
+      tags:
+      - auth
+  /api/v1/auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Đăng nhập bằng email/mật khẩu, trả về access token (JWT) và refresh
+        token
+      parameters:
+      - description: Thông tin đăng nhập
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.AuthResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: Đăng nhập
+      tags:
+      - auth
+  /api/v1/auth/logout:
+    post:
+      consumes:
+      - application/json
+      description: Thu hồi refresh token. Gọi lại với token đã thu hồi vẫn trả 204.
+      parameters:
+      - description: Refresh token
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.RefreshRequest'
+      responses:
+        "204":
+          description: No Content
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: Đăng xuất
+      tags:
+      - auth
+  /api/v1/auth/me:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.UserResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Thông tin người dùng hiện tại
+      tags:
+      - auth
+  /api/v1/auth/refresh:
+    post:
+      consumes:
+      - application/json
+      description: Đổi refresh token lấy cặp token mới. Refresh token cũ bị thu hồi.
+      parameters:
+      - description: Refresh token
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.RefreshRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.AuthResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: Làm mới token
+      tags:
+      - auth
+  /api/v1/auth/reset-password:
+    post:
+      consumes:
+      - application/json
+      description: Đổi reset_token (từ bước 2) lấy mật khẩu mới. Token chỉ dùng được
+        một lần. Thành công sẽ thu hồi mọi refresh token của người dùng.
+      parameters:
+      - description: reset_token và mật khẩu mới
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.ResetPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.MessageResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: 'Quên mật khẩu — bước 3: đặt mật khẩu mới'
+      tags:
+      - auth
+  /api/v1/auth/verify-reset-code:
+    post:
+      consumes:
+      - application/json
+      description: Xác thực OTP và trả về reset_token dùng một lần, hết hạn sau 10
+        phút. OTP bị tiêu thụ khi xác thực thành công; sai quá 5 lần sẽ bị vô hiệu.
+        Yêu cầu OTP mới sẽ huỷ reset_token cũ.
+      parameters:
+      - description: Email và OTP
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.VerifyResetCodeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.VerifyResetCodeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      summary: 'Quên mật khẩu — bước 2: xác thực OTP'
+      tags:
+      - auth
+  /api/v1/bot/send-message:
+    post:
+      consumes:
+      - application/json
+      description: Gửi tin nhắn text thuần (1-4096 ký tự) tới TELEGRAM_CHAT_ID qua
+        bot đã cấu hình.
+      parameters:
+      - description: Nội dung tin nhắn
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.SendMessageRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.SendMessageResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "502":
+          description: Telegram lỗi hoặc từ chối (token, chat id)
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Gửi tin nhắn Telegram (thử)
+      tags:
+      - bot
+  /api/v1/find-job/{id}:
+    get:
+      description: 'status: QUEUED (chờ), CRAWLING (đang cào), RANKING (đang chấm
+        điểm), DONE (xong, có matches), FAILED (xem error). Khi DONE, error có thể
+        liệt kê nguồn bị lỗi trong khi các nguồn khác vẫn có kết quả.'
+      parameters:
+      - description: ID lượt tìm
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.SearchResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Trạng thái và kết quả một lượt tìm việc
+      tags:
+      - find-job
+    post:
+      consumes:
+      - application/json
+      description: 'Tạo một lượt tìm chạy nền cho lượt phân tích CV {id} (POST /api/v1/analyze-cv,
+        phải ở trạng thái DONE): cào tất cả nguồn (topcv, itviec, jobsgo, indeed,
+        vietnamworks) cùng lúc theo keyword từ CV, lọc cứng (kinh nghiệm, kỹ năng
+        bắt buộc) rồi chấm điểm. exp=true: chỉ giữ job có số năm yêu cầu hợp với ứng
+        viên (≤2 năm: job 0-2 năm, 3 năm: 2-3 năm, 4-5 năm: 2-5 năm, trên 5 năm: từ
+        3 năm) và xếp hạng thêm theo lương (nếu tin có ghi) rồi tới kinh nghiệm. Chỉ
+        job đạt ngưỡng điểm mới được lưu. Trả về ngay; theo dõi bằng GET /api/v1/find-job/{id
+        lượt tìm}. Mỗi người dùng chỉ có một lượt tìm đang chạy.'
+      parameters:
+      - description: ID lượt phân tích CV
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: false
+        description: Lọc theo khoảng kinh nghiệm, xếp hạng theo lương rồi kinh nghiệm
+        in: query
+        name: exp
+        type: boolean
+      - description: Tuỳ chọn, bỏ trống thì lấy từ CV
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/handlers.FindJobRequest'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/handlers.SearchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "404":
+          description: Không có lượt phân tích CV này
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "409":
+          description: Đang có lượt tìm chưa xong, lượt phân tích chưa xong / thất
+            bại, hoặc đã có CV mới
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tìm việc phù hợp với một lượt phân tích CV
+      tags:
+      - find-job
+  /api/v1/parse-cv:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Đọc chữ trong CV (pdf, docx, txt, md; tối đa 10 MB) và lưu làm
+        CV hiện tại của người dùng. Kết quả phân tích của CV cũ bị xoá; gọi tiếp POST
+        /api/v1/analyze-cv.
+      parameters:
+      - description: File CV
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.ParseCVResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "413":
+          description: Request Entity Too Large
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "422":
+          description: CV không đọc được (ảnh scan, sai định dạng) hoặc nội dung không
+            phải CV
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+        "502":
+          description: AI service lỗi hoặc không chạy
+          schema:
+            $ref: '#/definitions/middlewares.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tải lên CV
+      tags:
+      - cv
+  /health:
+    get:
+      description: Kiểm tra API còn sống và kết nối PostgreSQL
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.HealthResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/handlers.HealthResponse'
+      summary: Health check
+      tags:
+      - system
+securityDefinitions:
+  BearerAuth:
+    description: Nhập "Bearer <access_token>"
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "go-backend-skills@anthropic-plugin-directory": true
+  }
+}

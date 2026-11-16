@@ -1,0 +1,42 @@
+# ===== Secrets / env =====
+.env
+.env.*
+!.env.example
+*.conf
+*.pem
+*.key
+
+# ===== Claude Code local =====
+.claude/settings.local.json
+
+# ===== Go (backend) =====
+backend/bin/
+backend/tmp/
+backend/data/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+coverage.out
+build-errors-*.log
+
+# ===== Python (llm) =====
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Dữ liệu cá nhân / output AI
+llm/data/
+
+# ===== IDE / OS =====
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

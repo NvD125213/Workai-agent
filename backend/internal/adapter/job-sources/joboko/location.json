@@ -1,0 +1,332 @@
+[
+  {
+    "id": 0,
+    "slug": "",
+    "name": "Tất cả địa điểm"
+  },
+  {
+    "id": 2,
+    "slug": "ha-noi",
+    "name": "Hà Nội"
+  },
+  {
+    "id": 3,
+    "slug": "ho-chi-minh",
+    "name": "Hồ Chí Minh"
+  },
+  {
+    "id": 4,
+    "slug": "da-nang",
+    "name": "Đà Nẵng"
+  },
+  {
+    "id": 5,
+    "slug": "can-tho",
+    "name": "Cần Thơ"
+  },
+  {
+    "id": 6,
+    "slug": "hai-phong",
+    "name": "Hải Phòng"
+  },
+  {
+    "id": 7,
+    "slug": "an-giang",
+    "name": "An Giang"
+  },
+  {
+    "id": 8,
+    "slug": "ba-ria-vung-tau",
+    "name": "Bà Rịa - Vũng Tàu"
+  },
+  {
+    "id": 9,
+    "slug": "bac-giang",
+    "name": "Bắc Giang"
+  },
+  {
+    "id": 10,
+    "slug": "bac-kan",
+    "name": "Bắc Kạn"
+  },
+  {
+    "id": 11,
+    "slug": "bac-lieu",
+    "name": "Bạc Liêu"
+  },
+  {
+    "id": 12,
+    "slug": "bac-ninh",
+    "name": "Bắc Ninh"
+  },
+  {
+    "id": 13,
+    "slug": "ben-tre",
+    "name": "Bến Tre"
+  },
+  {
+    "id": 14,
+    "slug": "binh-dinh",
+    "name": "Bình Định"
+  },
+  {
+    "id": 15,
+    "slug": "binh-duong",
+    "name": "Bình Dương"
+  },
+  {
+    "id": 16,
+    "slug": "binh-phuoc",
+    "name": "Bình Phước"
+  },
+  {
+    "id": 17,
+    "slug": "binh-thuan",
+    "name": "Bình Thuận"
+  },
+  {
+    "id": 18,
+    "slug": "ca-mau",
+    "name": "Cà Mau"
+  },
+  {
+    "id": 19,
+    "slug": "cao-bang",
+    "name": "Cao Bằng"
+  },
+  {
+    "id": 20,
+    "slug": "dak-lak",
+    "name": "Đắk Lắk"
+  },
+  {
+    "id": 21,
+    "slug": "dak-nong",
+    "name": "Đắk Nông"
+  },
+  {
+    "id": 22,
+    "slug": "dien-bien",
+    "name": "Điện Biên"
+  },
+  {
+    "id": 23,
+    "slug": "dong-nai",
+    "name": "Đồng Nai"
+  },
+  {
+    "id": 24,
+    "slug": "dong-thap",
+    "name": "Đồng Tháp"
+  },
+  {
+    "id": 25,
+    "slug": "gia-lai",
+    "name": "Gia Lai"
+  },
+  {
+    "id": 26,
+    "slug": "ha-giang",
+    "name": "Hà Giang"
+  },
+  {
+    "id": 27,
+    "slug": "ha-nam",
+    "name": "Hà Nam"
+  },
+  {
+    "id": 28,
+    "slug": "ha-tinh",
+    "name": "Hà Tĩnh"
+  },
+  {
+    "id": 29,
+    "slug": "hai-duong",
+    "name": "Hải Dương"
+  },
+  {
+    "id": 30,
+    "slug": "hau-giang",
+    "name": "Hậu Giang"
+  },
+  {
+    "id": 31,
+    "slug": "hoa-binh",
+    "name": "Hòa Bình"
+  },
+  {
+    "id": 32,
+    "slug": "hung-yen",
+    "name": "Hưng Yên"
+  },
+  {
+    "id": 33,
+    "slug": "khanh-hoa",
+    "name": "Khánh Hòa"
+  },
+  {
+    "id": 34,
+    "slug": "kien-giang",
+    "name": "Kiên Giang"
+  },
+  {
+    "id": 35,
+    "slug": "kon-tum",
+    "name": "Kon Tum"
+  },
+  {
+    "id": 36,
+    "slug": "lai-chau",
+    "name": "Lai Châu"
+  },
+  {
+    "id": 37,
+    "slug": "lam-dong",
+    "name": "Lâm Đồng"
+  },
+  {
+    "id": 38,
+    "slug": "lang-son",
+    "name": "Lạng Sơn"
+  },
+  {
+    "id": 39,
+    "slug": "lao-cai",
+    "name": "Lào Cai"
+  },
+  {
+    "id": 40,
+    "slug": "long-an",
+    "name": "Long An"
+  },
+  {
+    "id": 41,
+    "slug": "nam-dinh",
+    "name": "Nam Định"
+  },
+  {
+    "id": 42,
+    "slug": "nghe-an",
+    "name": "Nghệ An"
+  },
+  {
+    "id": 43,
+    "slug": "ninh-binh",
+    "name": "Ninh Bình"
+  },
+  {
+    "id": 44,
+    "slug": "ninh-thuan",
+    "name": "Ninh Thuận"
+  },
+  {
+    "id": 45,
+    "slug": "phu-tho",
+    "name": "Phú Thọ"
+  },
+  {
+    "id": 46,
+    "slug": "quang-binh",
+    "name": "Quảng Bình"
+  },
+  {
+    "id": 47,
+    "slug": "quang-nam",
+    "name": "Quảng Nam"
+  },
+  {
+    "id": 48,
+    "slug": "quang-ngai",
+    "name": "Quảng Ngãi"
+  },
+  {
+    "id": 49,
+    "slug": "quang-ninh",
+    "name": "Quảng Ninh"
+  },
+  {
+    "id": 50,
+    "slug": "quang-tri",
+    "name": "Quảng Trị"
+  },
+  {
+    "id": 51,
+    "slug": "soc-trang",
+    "name": "Sóc Trăng"
+  },
+  {
+    "id": 52,
+    "slug": "son-la",
+    "name": "Sơn La"
+  },
+  {
+    "id": 53,
+    "slug": "tay-ninh",
+    "name": "Tây Ninh"
+  },
+  {
+    "id": 54,
+    "slug": "thai-binh",
+    "name": "Thái Bình"
+  },
+  {
+    "id": 55,
+    "slug": "thai-nguyen",
+    "name": "Thái Nguyên"
+  },
+  {
+    "id": 56,
+    "slug": "thanh-hoa",
+    "name": "Thanh Hóa"
+  },
+  {
+    "id": 57,
+    "slug": "thua-thien-hue",
+    "name": "Thừa Thiên Huế"
+  },
+  {
+    "id": 58,
+    "slug": "tien-giang",
+    "name": "Tiền Giang"
+  },
+  {
+    "id": 59,
+    "slug": "tra-vinh",
+    "name": "Trà Vinh"
+  },
+  {
+    "id": 60,
+    "slug": "tuyen-quang",
+    "name": "Tuyên Quang"
+  },
+  {
+    "id": 61,
+    "slug": "vinh-long",
+    "name": "Vĩnh Long"
+  },
+  {
+    "id": 62,
+    "slug": "vinh-phuc",
+    "name": "Vĩnh Phúc"
+  },
+  {
+    "id": 63,
+    "slug": "yen-bai",
+    "name": "Yên Bái"
+  },
+  {
+    "id": 64,
+    "slug": "phu-yen",
+    "name": "Phú Yên"
+  },
+  {
+    "id": 65,
+    "slug": "nuoc-ngoai",
+    "name": "Nước Ngoài"
+  },
+  {
+    "id": 66,
+    "slug": "khac",
+    "name": "Khác"
+  }
+]

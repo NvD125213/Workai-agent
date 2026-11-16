@@ -1,0 +1,320 @@
+{
+ "code": 200,
+ "msg": "Successfully",
+ "data": {
+  "items": [
+   {
+    "id": 200975010,
+    "channel_code": "vl24h",
+    "title": "Java Backend Developer",
+    "title_slug": "java-backend-developer",
+    "level_requirement": 5,
+    "occupation_ids_main": [
+     8
+    ],
+    "field_ids_main": 137,
+    "field_ids_sub": [
+     146
+    ],
+    "province_ids": [
+     210000160
+    ],
+    "district_ids": [
+     220000832
+    ],
+    "gate_code": "",
+    "employer_id": 202382938,
+    "employer_info": {
+     "id": 202382938,
+     "assigned_staff_id": 100001413,
+     "assigned_staff_username": "duonglt@nhanlucsieuviet.com",
+     "name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ TASC VIỆT NAM",
+     "slug": "cong-ty-co-phan-cong-nghe-tasc-viet-nam",
+     "status": 1,
+     "last_revision_status": 1,
+     "email_verified_status": 1,
+     "logo": null,
+     "rate_response": 0,
+     "rate_response_time": 0
+    },
+    "rate_response": 26,
+    "rate_response_time": 337,
+    "vacancy_quantity": 3,
+    "working_method": 1,
+    "attribute": 0,
+    "probation_duration": 50,
+    "probation_duration_text": null,
+    "salary_unit": 0,
+    "salary_type": null,
+    "resume_apply_expired": 1796057999,
+    "age_range": 0,
+    "degree_requirement": 0,
+    "gender": 1,
+    "experience_range": 4,
+    "commission_from": 0,
+    "commission_to": 0,
+    "premium_type": 1,
+    "is_search_allowed": 1,
+    "is_verified": 0,
+    "status": 1,
+    "last_revision_status": 1,
+    "priority_max": 150,
+    "priority_all": [
+     {
+      "field_id": 0,
+      "priority": 150
+     }
+    ],
+    "created_at": 1793008157,
+    "updated_at": 1794411837,
+    "total_views": 1014,
+    "total_resume_applied": 32,
+    "area": 0,
+    "contact_name": "KH Vieclam24h",
+    "contact_address": "",
+    "contact_method": 0,
+    "job_requirement": "",
+    "job_requirement_html": "",
+    "other_requirement": "<p><span><strong>Yêu cầu bắt buộc:</strong></span></p><ul><li><span><strong>Có tối thiểu 2 năm kinh nghiệm phát triển phần mềm với Java Backend.</strong></span></li><li><span>Tốt nghiệp Đại học chuyên ngành Công nghệ thông tin, Kỹ thuật phần mềm, Hệ thống thông tin hoặc các chuyên ngành liên quan.</span></li><li><span>Nắm vững Java Core, OOP, Collections, Exception Handling và kiến thức về cấu trúc dữ liệu, giải thuật.</span></li><li><span>Có kinh nghiệm thực tế với <strong>Spring Boot, Spring Data JPA/Hibernate</strong></span></li><li><span>Có kinh nghiệm thiết kế, xây dựng và tích hợp RESTful API.</span></li><li><span>Có kiến thức về Spring Security, JWT và cơ chế Authentication/Authorization.</span></li><li><span>Thành thạo SQL, có kinh nghiệm sử dụng một trong: MySQL, MariaDB, PostgreSQL hoặc Oracle.</span></li><li><span>Có kinh nghiệm làm việc với Redis, Docker.</span></li><li><span>Có hiểu biết về kiến trúc Monolithic, Modular Monolith, Microservices.</span></li><li><span>Có kinh nghiệm sử dụng Message Queue (RabbitMQ hoặc Kafka).</span></li><li><span>Có khả năng thiết kế Database, xây dựng quan hệ giữa các bảng và tối ưu câu truy vấn.</span></li><li><span>Hiểu biết về Transaction Management, Validation và Exception Handling.</span></li><li><span>Sử dụng thành thạo Git và các công cụ quản lý source code.</span></li><li><span>Có kinh nghiệm làm việc với Maven hoặc Gradle.</span></li><li><span>Có khả năng đọc hiểu, phân tích yêu cầu nghiệp vụ và chuyển đổi thành giải pháp kỹ thuật.</span></li><li><span>Có tư duy logic, khả năng giải quyết vấn đề, tinh thần trách nhiệm và chủ động trong công việc.</span></li><li><span>Có khả năng làm việc độc lập và phối hợp tốt với các thành viên trong nhóm.</span></li></ul><p><span><strong>Ưu tiên ứng viên:</strong></span></p><ul><li><span>Có kinh nghiệm viết Unit Test với JUnit, Mockito.</span></li><li><span>Có kiến thức về Design Patterns, SOLID Principles và Clean Architecture.</span></li><li><span>Có kinh nghiệm tối ưu hiệu năng ứng dụng, Database và xử lý các hệ thống có nhiều người dùng đồng thời.</span></li><li><span>Có kinh nghiệm triển khai và vận hành ứng dụng trên Linux Server.</span></li></ul>",
+    "other_requirement_html": "<p><span><strong>Yêu cầu bắt buộc:</strong></span></p><ul><li><span><strong>Có tối thiểu 2 năm kinh nghiệm phát triển phần mềm với Java Backend.</strong></span></li><li><span>Tốt nghiệp Đại học chuyên ngành Công nghệ thông tin, Kỹ thuật phần mềm, Hệ thống thông tin hoặc các chuyên ngành liên quan.</span></li><li><span>Nắm vững Java Core, OOP, Collections, Exception Handling và kiến thức về cấu trúc dữ liệu, giải thuật.</span></li><li><span>Có kinh nghiệm thực tế với <strong>Spring Boot, Spring Data JPA/Hibernate</strong></span></li><li><span>Có kinh nghiệm thiết kế, xây dựng và tích hợp RESTful API.</span></li><li><span>Có kiến thức về Spring Security, JWT và cơ chế Authentication/Authorization.</span></li><li><span>Thành thạo SQL, có kinh nghiệm sử dụng một trong: MySQL, MariaDB, PostgreSQL hoặc Oracle.</span></li><li><span>Có kinh nghiệm làm việc với Redis, Docker.</span></li><li><span>Có hiểu biết về kiến trúc Monolithic, Modular Monolith, Microservices.</span></li><li><span>Có kinh nghiệm sử dụng Message Queue (RabbitMQ hoặc Kafka).</span></li><li><span>Có khả năng thiết kế Database, xây dựng quan hệ giữa các bảng và tối ưu câu truy vấn.</span></li><li><span>Hiểu biết về Transaction Management, Validation và Exception Handling.</span></li><li><span>Sử dụng thành thạo Git và các công cụ quản lý source code.</span></li><li><span>Có kinh nghiệm làm việc với Maven hoặc Gradle.</span></li><li><span>Có khả năng đọc hiểu, phân tích yêu cầu nghiệp vụ và chuyển đổi thành giải pháp kỹ thuật.</span></li><li><span>Có tư duy logic, khả năng giải quyết vấn đề, tinh thần trách nhiệm và chủ động trong công việc.</span></li><li><span>Có khả năng làm việc độc lập và phối hợp tốt với các thành viên trong nhóm.</span></li></ul><p><span><strong>Ưu tiên ứng viên:</strong></span></p><ul><li><span>Có kinh nghiệm viết Unit Test với JUnit, Mockito.</span></li><li><span>Có kiến thức về Design Patterns, SOLID Principles và Clean Architecture.</span></li><li><span>Có kinh nghiệm tối ưu hiệu năng ứng dụng, Database và xử lý các hệ thống có nhiều người dùng đồng thời.</span></li><li><span>Có kinh nghiệm triển khai và vận hành ứng dụng trên Linux Server.</span></li></ul>",
+    "approved_at": 1793025298,
+    "job_box": [
+     {
+      "id": 101289638,
+      "service_code": "vl24h.jobbox.freemium",
+      "job_field_id": null,
+      "job_occupation_id": null,
+      "displayed_area": null,
+      "displayed_method": null,
+      "expired_at": 1795366799,
+      "created_at": 1793008173,
+      "fee_type": 3,
+      "registration_jobbox_id": 203866651
+     }
+    ],
+    "refresh_at": 1793008173,
+    "salary_range": 21,
+    "salary_min": 10000000,
+    "salary_max": 17000000,
+    "remaining_apply_day": 18,
+    "score": 0,
+    "score_percent": 0,
+    "job_post_type": null,
+    "job_paid": false,
+    "resume_applied_history": 0,
+    "places": "[{\"province_id\":210000160,\"district_id\":220000832,\"address\":\"87 - 89 Khu\\u1ea5t Duy Ti\\u1ebfn\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":20.9946931,\"lng\":105.8004167,\"geo_precision\":\"address\"}]",
+    "actived_at_by_box": 1793008173,
+    "paid_status": 0,
+    "is_cv_optional": 2,
+    "urgent_status": 0,
+    "start_date": null,
+    "distance": null,
+    "required_fields": [],
+    "is_ai_suggest_job": 2,
+    "smart_tags": [
+     {
+      "name": "Lập trình & phát triển phần mềm",
+      "category": "Skill",
+      "priority": 1
+     },
+     {
+      "name": "Cơ sở dữ liệu",
+      "category": "Skill",
+      "priority": 2
+     },
+     {
+      "name": "DevOps & Cloud",
+      "category": "Skill",
+      "priority": 3
+     },
+     {
+      "name": "2 năm kinh nghiệm",
+      "category": "Experience",
+      "priority": 4
+     },
+     {
+      "name": "Phần mềm CNTT/Dịch vụ phần mềm",
+      "category": "Industry",
+      "priority": 5
+     }
+    ]
+   },
+   {
+    "id": 200982888,
+    "channel_code": "vl24h",
+    "title": "Nhân Viên Video Editor (Quay Dựng Video)",
+    "title_slug": "nhan-vien-video-editor-quay-dung-video",
+    "level_requirement": 5,
+    "occupation_ids_main": [
+     12,
+     3,
+     24
+    ],
+    "field_ids_main": 125,
+    "field_ids_sub": [
+     170,
+     156,
+     169,
+     168,
+     116,
+     176,
+     177,
+     165,
+     123,
+     144
+    ],
+    "province_ids": [
+     210000160,
+     210000172
+    ],
+    "district_ids": [
+     220000845,
+     220000811,
+     220001888,
+     220001902,
+     220000846
+    ],
+    "gate_code": "",
+    "employer_id": 202344990,
+    "employer_info": {
+     "id": 202344990,
+     "assigned_staff_id": 100001410,
+     "assigned_staff_username": "mintc@nhanlucsieuviet.com",
+     "name": "Công Ty TNHH TM Sơn Phúc An",
+     "slug": "cong-ty-tnhh-tm-son-phuc-an",
+     "status": 1,
+     "last_revision_status": 1,
+     "email_verified_status": 1,
+     "logo": "https://cdn1.vieclam24h.vn/images/employer_avatar/2026/03/30/son-phuc-an_177483884066.png?v=220513",
+     "rate_response": 0,
+     "rate_response_time": 0
+    },
+    "rate_response": 67,
+    "rate_response_time": 81,
+    "vacancy_quantity": 4,
+    "working_method": 1,
+    "attribute": 0,
+    "probation_duration": 50,
+    "probation_duration_text": null,
+    "salary_unit": 0,
+    "salary_type": null,
+    "resume_apply_expired": 1796144399,
+    "age_range": 0,
+    "degree_requirement": 7,
+    "gender": 1,
+    "experience_range": 3,
+    "commission_from": 0,
+    "commission_to": 0,
+    "premium_type": 1,
+    "is_search_allowed": 1,
+    "is_verified": 0,
+    "status": 1,
+    "last_revision_status": 1,
+    "priority_max": 150,
+    "priority_all": [
+     {
+      "field_id": 0,
+      "priority": 150
+     }
+    ],
+    "created_at": 1793702306,
+    "updated_at": 1794378241,
+    "total_views": 365,
+    "total_resume_applied": 3,
+    "area": 0,
+    "contact_name": "KH Vieclam24h",
+    "contact_address": "SP1184, Hải Âu 11, Vinhomes Oceanpark 1, Gia Lâm, Hà Nội",
+    "contact_method": 0,
+    "job_requirement": "",
+    "job_requirement_html": "",
+    "other_requirement": "<!--StartFragment--><ul><li><span>Có kinh nghiệm từ 1 năm ở vị trí Video Editor, Media hoặc các công việc liên quan là lợi thế; chấp nhận ứng viên mới ra trường có sản phẩm thực tế tốt.</span></li><li><span>Sử dụng thành thạo ít nhất 1-2 phần mềm chỉnh sửa video như CapCut, Premiere Pro hoặc phần mềm tương đương.</span></li><li><span>Biết quay chụp cơ bản bằng điện thoại, máy ảnh hoặc các thiết bị quay chuyên dụng.</span></li><li><span>Có tư duy hình ảnh, thẩm mỹ tốt; nắm bắt bố cục, ánh sáng và màu sắc.</span></li><li><span>Có khả năng sáng tạo nội dung, bắt trend nhanh và cập nhật xu hướng mạng xã hội.</span></li><li><span>Chủ động, có trách nhiệm, phối hợp tốt với các bộ phận liên quan.</span></li><li><span>Có khả năng làm việc dưới áp lực tiến độ, linh hoạt thời gian khi có sự kiện hoặc chương trình của công ty.</span></li></ul><!--EndFragment-->",
+    "other_requirement_html": "<!--StartFragment--><ul><li><span>Có kinh nghiệm từ 1 năm ở vị trí Video Editor, Media hoặc các công việc liên quan là lợi thế; chấp nhận ứng viên mới ra trường có sản phẩm thực tế tốt.</span></li><li><span>Sử dụng thành thạo ít nhất 1-2 phần mềm chỉnh sửa video như CapCut, Premiere Pro hoặc phần mềm tương đương.</span></li><li><span>Biết quay chụp cơ bản bằng điện thoại, máy ảnh hoặc các thiết bị quay chuyên dụng.</span></li><li><span>Có tư duy hình ảnh, thẩm mỹ tốt; nắm bắt bố cục, ánh sáng và màu sắc.</span></li><li><span>Có khả năng sáng tạo nội dung, bắt trend nhanh và cập nhật xu hướng mạng xã hội.</span></li><li><span>Chủ động, có trách nhiệm, phối hợp tốt với các bộ phận liên quan.</span></li><li><span>Có khả năng làm việc dưới áp lực tiến độ, linh hoạt thời gian khi có sự kiện hoặc chương trình của công ty.</span></li></ul><!--EndFragment-->",
+    "approved_at": 1793702308,
+    "job_box": [
+     {
+      "id": 101299246,
+      "service_code": "vl24h.jobbox.freemium",
+      "job_field_id": null,
+      "job_occupation_id": null,
+      "displayed_area": null,
+      "displayed_method": null,
+      "expired_at": 1798563599,
+      "created_at": 1793758364,
+      "fee_type": 3,
+      "registration_jobbox_id": 204007274
+     }
+    ],
+    "refresh_at": 1793758364,
+    "salary_range": 21,
+    "salary_min": 9000000,
+    "salary_max": 15000000,
+    "remaining_apply_day": 19,
+    "score": 0,
+    "score_percent": 0,
+    "job_post_type": null,
+    "job_paid": false,
+    "resume_applied_history": 0,
+    "places": "[{\"province_id\":210000160,\"district_id\":220000845,\"address\":\"S\\u1ed1 09, ng\\u00f5 104 Nguy\\u1ec5n Khi\\u00eam \\u00cdch\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":21.012836,\"lng\":105.941073,\"geo_precision\":\"address\"},{\"province_id\":210000160,\"district_id\":220000811,\"address\":\"S\\u1ed1 483 \\u0110\\u01b0\\u1eddng Nguy\\u1ec5n V\\u0103n C\\u1eeb, Ph\\u01b0\\u01a1\\u0300ng B\\u00f4\\u0300 \\u0110\\u00ea\\u0300\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":21.0480401,\"lng\":105.8804353,\"geo_precision\":\"address\"},{\"province_id\":210000172,\"district_id\":220001888,\"address\":\"220 P. H\\u1ed3 Sen, D\\u01b0 H\\u00e0ng K\\u00eanh\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":20.8369743,\"lng\":106.682946,\"geo_precision\":\"address\"},{\"province_id\":210000172,\"district_id\":220001902,\"address\":\"96 B\\u1ea1ch \\u0110\\u1eb1ng, N\\u00fai \\u0110\\u00e8o\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":20.920247594000045,\"lng\":106.67872185700008,\"geo_precision\":\"address\"},{\"province_id\":210000160,\"district_id\":220000846,\"address\":\"Khu V\\u1ef1c\",\"old_province_id\":null,\"old_district_id\":null,\"lat\":20.982674643000053,\"lng\":105.92163052100005,\"geo_precision\":\"address\"}]",
+    "actived_at_by_box": 1793758364,
+    "paid_status": 0,
+    "is_cv_optional": 2,
+    "urgent_status": 0,
+    "start_date": null,
+    "distance": null,
+    "required_fields": [],
+    "is_ai_suggest_job": 2,
+    "smart_tags": [
+     {
+      "name": "Quay dựng video",
+      "category": "Skill",
+      "priority": 1
+     },
+     {
+      "name": "Sáng tạo nội dung & MXH",
+      "category": "Skill",
+      "priority": 2
+     },
+     {
+      "name": "Quan hệ công chúng - truyền thông",
+      "category": "Skill",
+      "priority": 3
+     },
+     {
+      "name": "1 năm kinh nghiệm",
+      "category": "Experience",
+      "priority": 4
+     },
+     {
+      "name": "Bán lẻ/Bán sỉ",
+      "category": "Industry",
+      "priority": 5
+     }
+    ]
+   }
+  ],
+  "current": 1,
+  "before": 1,
+  "total_pages": 1,
+  "last": 1,
+  "next": 1,
+  "total_items": 3,
+  "data_location": {
+   "districts": [],
+   "provinces": {
+    "73": 11
+   }
+  },
+  "total_job_paid": 0,
+  "total_job_free": 11,
+  "content_bottom": {
+   "salary_min": 0,
+   "salary_max": 0,
+   "top_employer": []
+  }
+ },
+ "metadata": {
+  "api-version": "1.0",
+  "timestamp": 1794466841,
+  "datetime": "2026-11-12 14:00:41"
+ }
+}

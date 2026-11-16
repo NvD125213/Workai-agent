@@ -1,0 +1,96 @@
+# Tên project cố định (mặc định Compose lấy tên thư mục "backend"). Quyết định
+# tên image (<name>-api) và volume (<name>_postgres_data).
+#
+# Mặc định `docker compose up -d` chỉ bật db (dev local chạy api/worker bằng air).
+# Chạy cả stack trong Docker: `docker compose --profile full up -d --build`.
+name: notification-job-mb-backend
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: notification-job-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-notification_job}
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-notification_job}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  api:
+    profiles: ["full"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TARGET: api
+    container_name: notification-job-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      HTTP_ADDR: ":8080"
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      DB_NAME: ${DB_NAME:-notification_job}
+      DB_SSLMODE: ${DB_SSLMODE:-disable}
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?JWT_ACCESS_SECRET is required}
+      JWT_ISSUER: ${JWT_ISSUER:-notification-job-mb}
+      JWT_ACCESS_EXPIRES_MINUTES: ${JWT_ACCESS_EXPIRES_MINUTES:-15}
+      REFRESH_TOKEN_EXPIRES_DAYS: ${REFRESH_TOKEN_EXPIRES_DAYS:-7}
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+    ports:
+      - "${HTTP_PORT:-8080}:8080"
+
+  worker:
+    profiles: ["full"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TARGET: worker
+    container_name: notification-job-worker
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      DB_NAME: ${DB_NAME:-notification_job}
+      DB_SSLMODE: ${DB_SSLMODE:-disable}
+      DATA_DIR: /app/data
+      DATA_POLL_INTERVAL_SECONDS: ${DATA_POLL_INTERVAL_SECONDS:-30}
+      DATA_IMPORT_MAX_ATTEMPTS: ${DATA_IMPORT_MAX_ATTEMPTS:-5}
+      CRAWL_ENABLED: ${CRAWL_ENABLED:-true}
+      CRAWL_KEYWORDS: ${CRAWL_KEYWORDS:-golang}
+      CRAWL_SOURCES: ${CRAWL_SOURCES:-}
+      CRAWL_INTERVAL_HOURS: ${CRAWL_INTERVAL_HOURS:-3}
+      CRAWL_MAX_PAGES: ${CRAWL_MAX_PAGES:-5}
+      CRAWL_RUN_ON_START: ${CRAWL_RUN_ON_START:-false}
+      TZ: ${TZ:-Asia/Ho_Chi_Minh}
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  postgres_data:
